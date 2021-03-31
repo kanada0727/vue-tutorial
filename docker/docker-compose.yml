@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    container_name: vue-tutorial
+    image: vue-tutorial
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    tty: true
+    volumes:
+      - ../:/root/vue-tutorial
+      - ~/.ssh/:/root/.ssh/:ro
+      - ~/.gitconfig:/root/.gitconfig:ro

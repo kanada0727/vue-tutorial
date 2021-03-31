@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<title>test</title>
+<script src="https://unpkg.com/vue@2.5.17"></script>
+<div id="app">
+</div>
+<script>
+  console.assert(typeof Vue !== 'undefined')
+  var vm = new Vue(
+    {
+      data: {
+        message: "ほげ"
+      },
+      template: <p>
+        {{ message }}
+      </p>
+    }
+  )
+  vm.$mount("#app")
+</script>

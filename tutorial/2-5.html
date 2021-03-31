@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<title>test</title>
+<script src="https://unpkg.com/vue@2.5.17"></script>
+<div id="app">
+  <p>
+    {{ items[0].name}}
+  </p>
+</div>
+<script>
+  var items = [
+    {
+      name: '鉛筆',
+      price: 300,
+      quantity: 0,
+    },
+    {
+      name: 'ノート',
+      price: 400,
+      quantity: 0,
+    },
+    {
+      name: '消しゴム',
+      price: 500,
+      quantity: 0,
+    },
+  ]
+  console.assert(typeof Vue !== 'undefined')
+  var vm = new Vue(
+    {
+      data: {
+        items: items
+      },
+    }
+  )
+  vm.$mount("#app")
+  vm.$watch(
+    function () { return this.items[0].quantity },
+    function (quantity) { console.log(quantity) }
+  )
+</script>
